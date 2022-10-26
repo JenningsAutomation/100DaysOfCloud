@@ -1,4 +1,4 @@
-**Add a cover photo like:**
+
 ![placeholder image](cloudtrail_dashboard.png)
 
 # Completing AWS Cloudtrail Tutorial

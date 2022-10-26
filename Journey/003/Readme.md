@@ -1,52 +1,64 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+**Solution Diagram:**
+![placeholder image](Monitor_Root_user_Activity.drawio.png)
 
-# New post title here
+# Monitor and Notify on AWS Account Root User Activity
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ It is recommended to create another IAM role with admin permissions to prevent the root user access from getting in the wrong hands. However, there are times when the root user must be used. This Cloudwatch event rule will notify via sns email whenever the root user is being used.
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+- Create and enable a multi-region AWS CloudTrail trail for all AWS regions.
+- Upload the https://mng-blog-solutions.s3.amazonaws.com/MonitorNotifyRootUserActivity/RootActivityLambda.zip file to an S3 bucket.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- Provide notification of root user account activity
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- It appears that my cloudformation was rolled back. So I have to troubleshoot what happened. I was using another IAM role perhaps I need to create this with the root user.
+![Screenshot](rollback.png)
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+✍️ The tutorial I followed is here https://aws.amazon.com/blogs/mt/monitor-and-notify-on-aws-account-root-user-activity/
 
-### Step 1 — Summary of Step
+I will show my steps
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 1 — Create a CloudFormation Stack
 
-### Step 1 — Summary of Step
+![Screenshot](day3_step1.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 2 — Stack Settings
 
-### Step 3 — Summary of Step
+![Screenshot](Day3_step2.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 3 — Set SNS parameters and Lambda zip file location
+
+![Screenshot](day3_step3.png)
+
+### Step 4 — Acknowledge capabilities and create stack
+
+![Screenshot](day4_step4.png)
+
+### Step 5 — Receive SNS email notification
+
+![Screenshot](day5_step5.png)
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ Overall I have some bugs to fix, but I learned about cloudformation, cloudwatch, cloudtrail and sns topics. Some of it was review, some was new.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ Go back and fix my bugs and try again. Maybe with a different example
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
+[tweet](https://twitter.com/DemianJennings/status/1585283019132358656)
 
-[link](link)
+[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6991049691186507777/)
+
+
