@@ -1,52 +1,74 @@
 **Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+![AWS ec2 dev env](ec2_dev_environment.png)
 
-# New post title here
+# Build EC2 dev environment using terraform Part I
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ I wanted to go deeper in learning about terraform, by creating something I can actually use.
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ I would at least go through the initial terraform tutorial. Know the basics of terraform. Also know how to create AWS IAM user and have your AWS and terraform cli setup.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- The cover photo shows the basic setup of a ec2 instance on a public subnet inside of a security group in a VPC.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- I am following the tutorial by Derek Morgan on the youtube channel freecodecamp.org. https://www.youtube.com/watch?v=iRaai1IBlB0
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+✍️ I have just started. It will probably take a few days to complete. Plus I will need to troubleshoot some things.
 
-### Step 1 — Summary of Step
+### Step 1 — Create AWS IAM user
 
-![Screenshot](https://via.placeholder.com/500x300)
+![Screenshot](aws_create_user.png)
+- create a new user with admin access and create an access id
 
-### Step 1 — Summary of Step
+### Step 2 — Install AWS vscode extension
 
-![Screenshot](https://via.placeholder.com/500x300)
+![Screenshot](aws_extension.png)
 
-### Step 3 — Summary of Step
+### Step 3 — Install terraform vscode extension
 
-![Screenshot](https://via.placeholder.com/500x300)
+![Screenshot](terraformExtension.png)
+
+### Step 4 — create a aws profile. Add Access ID and Secret ID
+
+![Screenshot](CreateProfile.png)
+
+![Screenshot](profile2.png)
+
+### Step 4 — create a main.tf
+
+![Screenshot](maintf.png)
+
+### Step 5 — create a providers.tf
+
+![Screenshot](providerstf.png)
+
+### Step 5 — run terraform init
+
+![Screenshot](terraforminit.png)
+
+### Step 6 — run terraform plan
+
+![Screenshot](terraform_plan.png)
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ As you can see in the last command I have an error. So I need to troubleshoot that. It's related to my aws shared profile.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ Troubleshoot errors and continue
 
 ## Social Proof
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[tweet](https://twitter.com/DemianJennings/status/1586009772746104832)
+[linkedin](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-terraform-ec2-activity-6991776165619232768-Vy9e?utm_source=share&utm_medium=member_desktop)
