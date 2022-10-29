@@ -1,52 +1,50 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+**Architecture:**
+![placeholder image](../005/ec2_dev_environment.png)
 
-# New post title here
+# Build EC2 dev environment using terraform Part II
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ Continued with the dev environment build.
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ This is a continuation of the ec2 dev environment build with terraform. 
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- 🖼️ Besides learning terraform, it would give me something to work with.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- The tutorial that I'm following was built using terraform version 3. The version I'm using is version 4, so there are some changes.
+https://www.youtube.com/watch?v=iRaai1IBlB0
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+✍️ I spent a little time research my bug, and then created my subnet.
 
-### Step 1 — Summary of Step
+### Step 1 — Fix credential bug
 
-![Screenshot](https://via.placeholder.com/500x300)
+![Screenshot](step1_troubleshoot_credentials.png)
+There are 2 changes with regard to credentials. 
+1. shared_credentials_file is depracated. It still works but the new usage is shared_credentials_files and place the string in a bracket to indicate a list.
+2. I had to comment out the profile. I don't fully understand it, but it has something to do with looking for a profile that is not there. For now just commenting out works
 
-### Step 1 — Summary of Step
+### Step 1 — Add Subnet resource
 
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 3 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
+![Screenshot](step2_add_subnet_resource.png)
+add the resource to main.tf and run terraform apply.
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ It may not look like a lot was done. But researching bugs takes some time. The good thing is I'm getting more acquanted with the documentation.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ The next step is to setup the internet gateway.
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
-
-[link](link)
+[tweet](https://twitter.com/DemianJennings/status/1586478787100872704)
+[linkedin](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-activity-6992245368046456832-eLyM?utm_source=share&utm_medium=member_desktop)
