@@ -1,52 +1,58 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+**Architecture Diagram:**
+![placeholder image](../005/ec2_dev_environment.png)
 
-# New post title here
+# EC2 dev environment buils using terraform Part III
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ Adding an internet gateway and routes and route table.
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ Terraform, AWS account. Follow the build up to this point.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet.
+- An internet gateway enables resources in your public subnets (such as EC2 instances) to connect to the internet if the resource has a public IPv4 address or an IPv6 address.  For example, an internet gateway enables you to connect to an EC2 instance in AWS using your local computer.
+
+- A route table contains a set of rules, called routes, that are used to determine where network traffic from your subnet or gateway is directed. To put it simply, a route table tells network packets which way they need to go to get to their destination.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- I'm continuing to follow the youtube tutorial here https://www.youtube.com/watch?v=iRaai1IBlB0
+- I referred to the terraform and aws documentation for routes, route_tables and internet gateways
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+### Step 1 — Add internet gateway resource to main.tf
 
-### Step 1 — Summary of Step
+![Screenshot](igtw_resource.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 2 — Add route table resource
 
-### Step 1 — Summary of Step
+![Screenshot](route_table.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 3 — Add route resource 
 
-### Step 3 — Summary of Step
+![Screenshot](routes.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 4 — Add route_table association
+
+![Screenshot](route_table_association.png)
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ I'm starting to see how everything is coming together. I learned these concepts separately. Now it's starting to gel and make sense. I see how vpc's, gateways, routes and route tables are connected.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ The next step is to setup security groups
 
 ## Social Proof
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[tweet](https://twitter.com/DemianJennings/status/1586807199191470087)
+
+[linkedIn](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-activity-6992573423147237376-T8Rs?utm_source=share&utm_medium=member_desktop)
