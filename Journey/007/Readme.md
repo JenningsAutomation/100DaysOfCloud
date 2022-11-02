@@ -22,6 +22,9 @@
 
 - I'm continuing to follow the youtube tutorial here https://www.youtube.com/watch?v=iRaai1IBlB0
 - I referred to the terraform and aws documentation for routes, route_tables and internet gateways
+- From the aws docs. An internet gateway is a horizontally scaled, redundant, and highly available VPC component that enables communication between your VPC and the internet.
+
+To use an internet gateway, attach it to your VPC and specify it as a target in your subnet route table for internet-routable IPv4 or IPv6 traffic. An internet gateway performs network address translation (NAT) for instances that have been assigned public IPv4 addresses.
 
 ## Try yourself
 
