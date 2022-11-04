@@ -1,52 +1,62 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+**Architecture Diagram**
+![placeholder image](../005/ec2_dev_environment.png)
 
-# New post title here
+# EC2 dev environment buils using terraform Part V
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ This is the completion of the ec2 dev environment build. I setup tfvars variable files and add conditional expressions in the main.tf to switch shells based on the host OS. I wrap everything up with formatting the output.
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ The last part of the tutorial by Derek Morgan on freecodecamp.org channel. Link here: https://www.youtube.com/watch?v=iRaai1IBlB0
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
-
-## Cloud Research
-
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- The purpose of this final phase is to automate selecting the cli shell based on host OS. That is controlled by adding variable files and using conditional logic. Finally, the output is formatted by using a outputs.tf file.
 
 ## Try yourself
 
 ✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
 
-### Step 1 — Summary of Step
+### Step 1 — create config template file
 
-![Screenshot](https://via.placeholder.com/500x300)
+![Screenshot](linux_config.png)
 
-### Step 1 — Summary of Step
+### Step 2 — add provisioner section to main.tf
 
-![Screenshot](https://via.placeholder.com/500x300)
+![Screenshot](provisioner.png)
 
-### Step 3 — Summary of Step
+### Step 3 — create varaibles.tf
 
-![Screenshot](https://via.placeholder.com/500x300)
+![Screenshot](variables_tf.png)
+
+### Step 4 — create terraform.tfvars
+This sits the default name of host OS
+
+![Screenshot](terraform_tfvars.png)
+
+### Step 5 — create dev.tfvars
+This sits the default name of host OS
+
+![Screenshot](dev_tfvars.png)
+
+### Step 6 — format output 
+Format the output. create outputs.tf file
+
+![Screenshot](outputs_tf.png)
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ This has been an awesome tutorial. Just to think that a week ago I had heard of terraform before, but I had know idea what it's purpose was or how to use it. I feel confident with the fundamentals now and I actually have something real that I can apply my knowledge and practice. Everything is working great. There were some minor differences in what I did and the tutorial due to version differences and my host OS is linux. Overall, the tutorial was fantastic.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ I want to take time and review all of the topics that I covered creating the dev environment. I want to review the documentation, so I fully understand what I did before I move on. Besides that, I'd like to actually put the dev environment to use.
 
 ## Social Proof
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[tweet](https://twitter.com/DemianJennings/status/1588560951120646144)
+[Linkedin] (https://www.linkedin.com/posts/demian-jennings_100daysofcloud-activity-6994327439770275841-C6KL?utm_source=share&utm_medium=member_desktop)
