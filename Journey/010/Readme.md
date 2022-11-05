@@ -1,52 +1,38 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+<!-- This template removes the micro tutorial for a quicker post and removes images for a full template check out the 000-DAY-ARTICLE-LONG-TEMPLATE.MD-->
 
-# New post title here
+**Pipeline Architecture:**
+![placeholder image](pipeline_architecture.png)
+
+# Building end-to-end AWS DevSecOps CI/CD pipeline with open source SCA, SAST and DAST tools
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ I am moving into devsecops, so I wanted a project to implement all of those tools.
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ Before I can begin with the pipeline, I must first have the following prequisites:
+- Elastic Beanstalk environments with an application deployed.
+- A CodeCommit repo
+- The provided buildspec-*.yml files, sonar-project.properties file, json file, and phpstan.neon file uploaded to the root of the application code repository.
+- The Lambda function uploaded to a S3 bucket. We use this function to parse the scanning reports and post the results to Security Hub.
+- A SonarQube URL and generated API token for code scanning.
+- An OWASP ZAP URL and generated API key for dynamic web scanning.
+- An application web URL to run the DAST testing.
+- An email address to receive approval notifications for deployment, pipeline change notifications, and CloudTrail events.
+- AWS Config and Security Hub enabled. For instructions, see Managing the Configuration Recorder and Enabling Security Hub manually, respectively.
+
+So before I get started on the pipeline, I've got some work to do to finish the prequistes.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- ✍️ Delivering secure and compliant application changes rapidly while running operations consistently with automation.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
-
-## Try yourself
-
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 3 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-## ☁️ Cloud Outcome
-
-✍️ (Result) Describe your personal outcome, and lessons learned.
-
-## Next Steps
-
-✍️ Describe what you think you think you want to do next.
+- ✍️ I am re-creating a CI/CD pipeline from a blog post written by Srinivas Manepalli.
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
-
-[link](link)
+[tweet](https://twitter.com/DemianJennings/status/1588975923789197312)
+[linkedin](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-activity-6994742581452582913--XIx?utm_source=share&utm_medium=member_desktop)
