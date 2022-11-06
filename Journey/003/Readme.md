@@ -37,7 +37,7 @@ I will show my steps
 
 ### Step 3 — Set SNS parameters and Lambda zip file location
 
-![Screenshot](day3_step3.png)
+![Screenshot](day3_step3a.png)
 
 ### Step 4 — Acknowledge capabilities and create stack
 
