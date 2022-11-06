@@ -32,11 +32,11 @@
 
 ### Step 2 — Search Permissions
 
-![Screenshot](add_permissions.png)
+![Screenshot](add_permissions1.png)
 
 ### Step 3 — Add Permissions
 
-![Screenshot](Add_permissions_button.png)
+![Screenshot](Add_permissions_button1.png)
 
 ### Step 4 — Add Permissions to Group
 
