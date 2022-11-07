@@ -1,52 +1,43 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+**Prerequisites and prerequisites of prerequisites:**
 
-# New post title here
+![prerequisites image](https://media.giphy.com/media/GxMOE1Ns0fdy4bfhf6/giphy.gif)
+
+
+# Building AWS DevSecOps CI/CD pipeline Part I
+## Deploy a high-availabilty WordPress website with Elastic Beanstalk Environment
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+- Before I can build a CI/CD pipeline, I first need to have an application. 
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+- Knowledge of the basic Elastic Beanstalk operations and the Elastic Beanstalk console
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+![elastic beanstalk](ElasticBeanstalk.png) 
+
+With Elastic Beanstalk, you can quickly deploy and manage applications in the AWS Cloud without having to learn about the infrastructure that runs those applications. Elastic Beanstalk reduces management complexity without restricting choice or control. 
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- I started with the basic Elastic Beanstalk getting started tutorial https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/GettingStarted.html
+- I then moved to building this https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/php-hawordpress-tutorial.html
 
-## Try yourself
-
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 3 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
+I was not successful. The project failed to deploy. It has to be my settings, maybe my environment variables, or I just don't have the subnets setup correctly. I'll dig in and figure it out.
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+- (result) My first crack at it was failure. But I'm going to try again with a fresh mind.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+- Retrace my steps. Check all settings
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[tweet](https://twitter.com/DemianJennings/status/1589744208466030594)
+
+[linkedin](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-activity-6995510910345764864-sTXk?utm_source=share&utm_medium=member_desktop)
