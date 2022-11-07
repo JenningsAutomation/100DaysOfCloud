@@ -41,11 +41,11 @@ I will show my steps
 
 ### Step 4 — Acknowledge capabilities and create stack
 
-![Screenshot](day4_step4.png)
+![Screenshot](day3_step4.png)
 
 ### Step 5 — Receive SNS email notification
 
-![Screenshot](day5_step5.png)
+![Screenshot](day3_step5.png)
 
 ## ☁️ Cloud Outcome
 
