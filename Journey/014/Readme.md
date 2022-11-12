@@ -1,52 +1,94 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+**CodePipeline**
+![AWS CodeCommit](../013/architecture.png)
 
-# New post title here
+# AWS CodeCommit Basics - Branches, Pull requests  and IAM Groups
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ Review the basics of CodeCommit. Creating branches, pull requests and limiting repository actions through IAM groups
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ You should have a basic idea of git and github is helpful. You should know the basics of IAM.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- Creating branches and pull requests is a best practice when working in teams. It gives the manager a chance to review the code before merging it into the repository.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- CodeCommit is very similar to github. So if you know how that works, Codecommit is very similar.
 
-## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+### Step 1 — checkout a new branch
+- git checkout -b my-feature-2
 
-### Step 1 — Summary of Step
+### Step 2 — Make a change to file/files
+(here I'm changing the version on line 29)
+![Screenshot](html_change.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 3 — Add changes
+- git add .
 
-### Step 1 — Summary of Step
+### Step 4 — commit changes
+ - git commit -m "Changed to v4"
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 5 — push changes to upstream branch
+- git push --set-upstream origin my-feature-2
 
-### Step 3 — Summary of Step
+![Screenshot](git_cli_ops.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 6 — Branch listed in aws repositories
+
+![Screenshot](new_branch.png)
+
+### Step 7 — Create Pull request
+
+![Screenshot](create_pr.png)
+
+### Step 8 - Give it a name
+![Screenshot](titel_pr_create.png)
+
+### Step 9 - Merge pull request
+![Screenshot](review_changes.png)
+
+### Step 10 - Complete merge
+![Screenshot](complete_merge_pr.png)
+
+### Step 11 - merge success
+![Screenshot](merge_success_pr.png)
+
+## Creating User groups
+
+### Step 12 - create group
+![Screenshot](create_group.png)
+
+### Step 13 - name group
+![Screenshot](name_group.png)
+
+### Step 14 - create policy
+![Screenshot](create_inline_policy.png)
+
+### Step 15 - edit policy
+![Screenshot](edit_policy.png)
+
+### Step 16 - name policy
+![Screenshot](give_it_a_name.png)
+
+### Step 17 - Attach policy to junior_devs group
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ I have used github, so this was a review. But its important to go back over the fundamentals every once in awhile.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ creating triggers and notifications in CodeCommit
 
 ## Social Proof
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[tweet](https://twitter.com/DemianJennings/status/1591499819826167810)
+
+[linkedIn](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-aws-activity-6997266177890693120-E0lE?utm_source=share&utm_medium=member_desktop)
