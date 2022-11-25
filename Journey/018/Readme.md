@@ -1,52 +1,67 @@
 **Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+![lambda codecommit](lambda.png)
 
-# New post title here
+# CodeCommit triggers and Notifications
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ Creating triggers in CodeCommit is a way to initiate an automation.
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ how to create a lambda function, basic IAM knowledge, your langauge of choice.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- The use case is to initiate an automation or notification
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- I'm following the udemy course from Stephane Maarek, aws-certified-devops-engineer-professional-hands-on. More details can be found on https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambda.html
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
 
-### Step 1 — Summary of Step
+### Step 1 — Create a trigger
+In CodeCommit select Triggers from the settings menu
 
-![Screenshot](https://via.placeholder.com/500x300)
+![CodeCommit trigger](step5_create_trigger.png)
 
-### Step 1 — Summary of Step
+### Step 2 — Enter in Trigger Details and Service Details
 
-![Screenshot](https://via.placeholder.com/500x300)
+![Details](step6_trigger_details.png)
 
-### Step 3 — Summary of Step
+### Step 3 — Create Lambda Function
 
-![Screenshot](https://via.placeholder.com/500x300)
+![create function](step11_create_lambda_function.png)
+
+### Step 4 — Fill in Lambda details
+
+![lambda details](step12_basic_lambda_setup.png)
+
+### Step 5 - Edit Code
+Replace default lambda code with this
+![lambda code](lambda_code.png)
+
+### Step 5 — Add Trigger
+
+![Add Trigger](step13_add_trigger.png)
+
+### Step 6 — Trigger Configuration
+
+![Trigger Config](step14_trigger_configuration.png)
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ TBH it mostly worked. But I had issues copying and pasting code, which I still haven't fixed. Also the notifications came in through cloudwatch but not in the format that the code specifies. So I have to troubleshoot further. 
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ Next, I'm moving on to CodeBuild
 
 ## Social Proof
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[tweet](https://twitter.com/DemianJennings/status/1596280157366792193)
+[linkedIn](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-aws-cloud-activity-7002046516483792896-H02z?utm_source=share&utm_medium=member_desktop)
