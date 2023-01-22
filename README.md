@@ -49,7 +49,7 @@ I would like to feel confident with AWS, Azure and GCP
 - [ ] ☁️ 17 > [My Seventeenth Day](Journey/017/Readme.md)
 - [ ] ☁️ 18 > [My Eighteenth Day](Journey/018/Readme.md)
 - [ ] ☁️ 19 > [My Nineteenth Day](Journey/019/Readme.md)
-- [ ] ☁️ 20 > [](Journey/020/Readme.md)
+- [ ] ☁️ 20 > [My Twentieth Day](Journey/020/Readme.md)
 
 ## Crossing the bridge
 
