@@ -1,52 +1,95 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
 
-# New post title here
+![placeholder image](cloudformation.png)
+
+# CloudFormation Basics
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ For the foreseable future, I will be diving headfirst into cloud formation. CloudFormation is a way to create infrastructure as code.
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ A general familiarity of how to navigate AWS.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- Cloud Formation is a great clean way to build infrastructure as well as take it down cleanly. Most AWS services can be created with cloud formation.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- AWS Devops by Stephane Maarek.
 
-## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+### Step 1 — Select Create Stack
+Head over to CloudFormation and select "Create stack" with new resources.
 
-### Step 1 — Summary of Step
+![Screenshot](step1-create-a-stack.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 2 — Upload Template
+This first template was provided as part of the course materials from the Devops course. Upload and press Next.
 
-### Step 1 — Summary of Step
+![Screenshot](step2-upload-template.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 3 — Name your Template
 
-### Step 3 — Summary of Step
+![Screenshot](step3-Name-Template.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+
+### Step 4 — Accept Default Options
+
+![Screenshot](step4-accept-options.png)
+
+### Step 5 — Review Your Options
+Review your options and select Submit
+
+![Screenshot](step5-review-your-options.png)
+
+![Screenshot](step5a-formation-in-progress.png)
+
+### Step 6 — Stack is Created
+The stack was successfully created, however over time you may want to update or delete the stack. We will update the stack with extra security groups and elastic IP. Click on Update from main dashboard.
+
+![Screenshot](step6-update-stack.png)
+
+### Step 7 — Replace Current Template
+
+![Screenshot](step7-replace-template.png)
+
+### Step 8 — Describe Security group
+I'll add a description and accept the next page options for stack options.
+
+
+### Step 9 — Preview the changes
+The changes are previewed. Everything looks ok, I'll submit
+
+![Screenshot](step9-preview-changes.png)
+
+### Step 10 — Changes in progress
+
+![Screenshot](step10-update-inprogess.png)
+
+![Screenshot](step10a-update2.png)
+
+### Step 11 — Delete the stack
+Everything looks good, however if we to delete the stack and all of its recources it's as easy as deleting the stack in Stackformation.
+
+![Screenshot](step11-delete-the-stack.png)
+
+![Screenshot](step11a-delete.png)
+
+
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ Cloud formation is very powerful, and I am just scratching the service. This was a good introduction.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ Keep Diving Deep!!!
 
 ## Social Proof
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[Twitter](https://twitter.com/DemianJennings/status/1624858467335823361)
+[LinkedIn](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-devops-infrastructure-activity-7030624514073886721-9rEQ?utm_source=share&utm_medium=member_desktop)
