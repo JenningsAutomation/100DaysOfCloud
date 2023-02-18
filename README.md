@@ -62,7 +62,7 @@ I would like to feel confident with AWS, Azure and GCP
 - [ ] ☁️ 27 > [My Twentyseventh Day](Journey/027/Readme.md)
 - [ ] ☁️ 28 > [My Twentyeighth Day](Journey/028/Readme.md)
 - [ ] ☁️ 29 > [My Twentyninth Day](Journey/029/Readme.md)
-- [ ] ☁️ 30 > [](Journey/030/Readme.md)
+- [ ] ☁️ 30 > [My Thirtieth Day](Journey/030/Readme.md)
 
 ## Into the bushy, thorny forest
 
