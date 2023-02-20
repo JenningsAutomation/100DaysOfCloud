@@ -1,52 +1,35 @@
 **Add a cover photo like:**
 ![placeholder image](https://via.placeholder.com/1200x600)
 
-# New post title here
+# Create Java Project DevSecops Pipeline
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ This pipeline will implement SonarCloud for Static Analysis testing (SAST), OWASP Zap for Dynamic Analysis System Testing (DAST) and Snyk for Software Composition Analysis (SCA).
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ You should be familiar with CodePipeline, setting IAM permissions, know how to create an S3 bucket.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- 🖼️ This is a realistic implementation of a devsecops pipeline.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
-
-## Try yourself
-
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 3 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
+- ✍️ I'm following asecurityguru's course AWS Security: DevSecOps & AWS Security Services & Terraform.
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ Overall it was a good practical exercise for implementing complete analysis. There are a lot of small configurations that can make the pipeline fail. So it is a process that should be practiced consistently to be implemented properly.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ I actually, just want to keep practicing it.
 
 ## Social Proof
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[twitter](https://twitter.com/DemianJennings/status/1627511748252106753)
+[linkedin](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-pipeline-awspipeline-activity-7033277815772868608-WYWm?utm_source=share&utm_medium=member_desktop)
