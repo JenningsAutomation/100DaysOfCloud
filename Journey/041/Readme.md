@@ -1,52 +1,94 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
 
-# New post title here
+# SAM , CodeDeploy, Step function Overview
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ Today I looked at another example exploring how SAM and CodeDeploy work together. I also did an overview of step functions
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ Nothing too much. You should know about lambda functions and codedeploy and also cloudformation. Basic stuff
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- 🖼️ With respect to step functions, they help you orchestrate complex workflows. SAM does alot of work for you. You create a relatively simple yaml file and SAM goes to work.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- ✍️ I'm using Stephane Maarek's udemy course for devops. The SAM cli and lambda ui has changed, so you have to figure out those changes, but nothing to crazy.
 
-## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+### Step 1 — Gradually Shift Users to New Deployed Version
+Using CodeDeploy we gradually shift users to the new function version. We will add this code to our evetns section in template.yaml
 
-### Step 1 — Summary of Step
+```
+AutoPublishAlias: live
 
-![Screenshot](https://via.placeholder.com/500x300)
+    DeploymentPreference:
+      Type: Canary10Percent10Minutes
+```
 
-### Step 1 — Summary of Step
+### Step 2 — Make a change app.py
+changing hello to goodbye
 
-![Screenshot](https://via.placeholder.com/500x300)
+```
+    return {
+        "statusCode": 200,
+        "body": json.dumps({
+            "message": "goodbye world",
+            # "location": ip.text.replace("\n", "")
+        }),
+    }
+```
 
-### Step 3 — Summary of Step
+### Step 4 — Build
+```
+sam build
+```
 
-![Screenshot](https://via.placeholder.com/500x300)
+![Screenshot](step4-sam-build.png)
+
+### Step 5 — Package Function
+
+![Screenshot](step5-package-function.png)
+
+### Step 6 — Deploy
+
+![Screenshot](step6-deployment.png)
+
+## Step Functions
+### Step 7 — Get Started
+
+![Screenshot](step7-get-started.png)
+
+![Screenshot](step7a-step-function.png)
+
+![Screenshot](step7b-details.png)
+
+### Step 8 — Start Execution
+
+![Screenshot](step8a-execution.png)
+
+### Step 9 — Test False
+select a new execution and change true to false
+
+![Screenshot](step9-false.png)
+
+### Step 10 — Result
+
+![Screenshot](step10-result.png)
+
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ SAM and step-functions really start to flex your power. Incredible assets to add your AWS skill set. On the negative side, AWS is changing rapidly so course materials can quickly become obsolete. You need to adjust.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ Maybe more step function tutorials and then API gateway
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[Twitter](https://twitter.com/DemianJennings/status/1634010073944014850)
+[linkedin](https://www.linkedin.com/posts/demian-jennings_aws-awscloud-activity-7039775978776141825-jcgK?utm_source=share&utm_medium=member_desktop)
