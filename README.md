@@ -81,7 +81,7 @@ I would like to feel confident with AWS, Azure and GCP
 
 - [ ] ☁️ 41 > [My Fortyfirst Day](Journey/041/Readme.md)
 - [ ] ☁️ 42 > [My Fortysecond Day](Journey/042/Readme.md)
-- [ ] ☁️ 43 > [](Journey/043/Readme.md)
+- [ ] ☁️ 43 > [My Fortythird Day](Journey/043/Readme.md)
 - [ ] ☁️ 44 > [](Journey/044/Readme.md)
 - [ ] ☁️ 45 > [](Journey/045/Readme.md)
 - [ ] ☁️ 46 > [](Journey/046/Readme.md)

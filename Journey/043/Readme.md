@@ -1,52 +1,81 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
 
-# New post title here
+# Api Gateway
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ API Gateway is a service that easily allows you to spin up an API from a variety of sources like lambda, ec2 and others. Today I created a simple API that used a lambda function as its source. 
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ You should know how lambda functions work and how to create them. You should also have a general idea of http protocol and verbs.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- 🖼️ Quickly create an API. You also have the options of using different deployments and stages for example using blue/green deployment.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- ✍️ The material is from Stephane Maarek's Udemy course on AWS Devops. Also some of the official AWS documentation.
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+### Step 1 — Create an API
 
-### Step 1 — Summary of Step
+![Screenshot](step1-create-api.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 2 — Select REST API
 
-### Step 1 — Summary of Step
+![Screenshot](step2-rest-api.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 3 — Set API settings
+I will create a New regional API 
 
-### Step 3 — Summary of Step
+![Screenshot](step4-settings.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 4 — Create Method
+Choose Get from the dropdown
+![Screenshot](step5-create-method.png)
+
+### Step 5 — Choose Integration
+As our integration type, we will choose a lambda function. So we will make a demo lambda function for this
+
+### Step 6 — Create Lambda Function
+
+![Screenshot](step7-lambda.png)
+
+![Screenshot](step7a-lambda-settings.png)
+
+![Screenshot](step7b-finished-lambda.png)
+
+### Step 7 — Select Lambda Function
+Refresh the page and begin typing in the lambda function you just created, it should auto-complete. Click save and accept the next screen.
+![Screenshot](step8-choose-lambda.png)
+
+
+### Step 8 — Test Endpoint
+Click on Test, and verify response
+![Screenshot](step9-test-endpoint.png)
+
+### Step 9 — Deploy API
+From the Actions menu click on deploy. Create a new stage named DEV
+![Screenshot](step9-test-endpoint.png)
+
+### Step 10 — Invoke URL
+Once the API is deployed a new stage will be created and a public url will be supplied
+![Screenshot](step11-invoke1.png)
+![Screenshot](step11a-url-invoke.png)
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ After building many api's I thought this was a relatively easy quick method to spin up an api with tons of options like authenticating users, using cognito and creating api keys. I can't wait to see what else I can do with this.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ Dig deeper into api gateway.
 
 ## Social Proof
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[twitter](https://twitter.com/DemianJennings/status/1634633798703886338)
+[linkedIn](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-aws-awscloud-activity-7040400116423299073-v4g_?utm_source=share&utm_medium=member_desktop)
