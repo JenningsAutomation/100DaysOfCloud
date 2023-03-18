@@ -121,6 +121,6 @@ Sample Policy. Add the other bucket arn's in the s3:PutObject setting
 
 ## Social Proof
 
-[Twitter](link)
+[Twitter](https://twitter.com/DemianJennings/status/1636884364293287942)
 
-[LinkedIn](link)
+[LinkedIn](https://www.linkedin.com/posts/demian-jennings_100daysofcloud-aws-awscloud-activity-7042650660911136769-cnx6?utm_source=share&utm_medium=member_desktop)
