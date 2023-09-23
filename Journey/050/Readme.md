@@ -1,52 +1,112 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+`**The Real Work Begins:**
+![The Journey](scientist.png)
 
-# New post title here
+# Creating an AWS Golang Lambda Function
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ From this moment forward I will begin to build something I've been thinking about for a long time. For the next 50 days of this journey i will be focused on building an automated reconnaisance tool. 
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ Basic knowledge of how to create a golang project and how lambda functions work
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- 🖼️ The tool will be used for ethical hacking and bug bounty.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- ✍️ Blogs by Hakluke and brevityinmotion and also AWS documentation
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
 
-### Step 1 — Summary of Step
+### Step 1 — Create a project
+Create a directory where you want this to live. Inside that directory run this command. For my example I called i hello, but that could be whatever you want it to be.
 
-![Screenshot](https://via.placeholder.com/500x300)
+```
+go mod init hello
+```
 
-### Step 1 — Summary of Step
+### Step 2 — Create your go file
+For this I'm just copying the code directly from the AWS documentation for Go lambdas
 
-![Screenshot](https://via.placeholder.com/500x300)
+```
+package main
 
-### Step 3 — Summary of Step
+import (
+	"context"
+	"fmt"
 
-![Screenshot](https://via.placeholder.com/500x300)
+	"github.com/aws/aws-lambda-go/lambda"
+)
+
+type MyEvent struct {
+	Name string `json:"name"`
+}
+
+func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
+	return fmt.Sprintf("Hello %s!", name.Name), nil
+}
+
+func main() {
+	lambda.Start(HandleRequest)
+}
+```
+
+### Step 4 — Import the Golang AWS runtime
+
+```
+go get github.com/aws/aws-lambda-go/lambda
+```
+
+### Step 5 — Build the the executable
+The name of the package and main function is called main.
+
+```
+go build -o main main.go
+```
+
+
+### Step 6 — Zip the file
+
+```
+zip archive.zip main
+```
+
+
+### Step 7 — Create a Golang Lambda on AWS
+
+![Create Lambda](create.png)
+
+
+### Step 8 — Upload the Zip File
+
+![Upload](upload.png)
+
+
+### Step 9 — Edit the Runtime Settings
+
+Change the Handler name to main. (If that's your main function)
+
+![Screenshot](runtime.png)
+
+
+### Step 10 — Create a test
+give the test a name. In the file i'm using, it's expecting a json object. 
+Here's what I used
+![Screenshot](test.png)
+
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ It was a success although I hade to coblle up the answers I need from several sources.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ Implement another lambda function, but this time make it port scan
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
-
-[link](link)
+[toot](https://mastodon.social/@code_sentinel/111112691450006115)
