@@ -1,0 +1,67 @@
+# IKE + ESP ===========
+
+# IKE Group (Phase 1)
+set vpn ipsec ike-group IKE-GROUP dead-peer-detection action 'restart'
+set vpn ipsec ike-group IKE-GROUP dead-peer-detection interval '10'
+set vpn ipsec ike-group IKE-GROUP dead-peer-detection timeout '30'
+set vpn ipsec ike-group IKE-GROUP key-exchange 'ikev2'
+set vpn ipsec ike-group IKE-GROUP lifetime '28800'
+set vpn ipsec ike-group IKE-GROUP proposal 1 dh-group '14'
+set vpn ipsec ike-group IKE-GROUP proposal 1 encryption 'aes256'
+set vpn ipsec ike-group IKE-GROUP proposal 1 hash 'sha256'
+
+# ESP Group (Phase 2)
+set vpn ipsec esp-group ESP-GROUP proposal 1 encryption 'aes256'
+set vpn ipsec esp-group ESP-GROUP proposal 1 hash 'sha256'
+set vpn ipsec esp-group ESP-GROUP pfs 'enable'
+set vpn ipsec esp-group ESP-GROUP lifetime '27000'
+
+# TUNNEL 1 ===========
+
+set interfaces vti vti0 address '169.254.100.1/30'
+set interfaces vti vti0 description 'VPG tunnel 1'
+set interfaces vti vti0 ip adjust-mss 1350
+set interfaces vti vti0 mtu '1436'
+
+# cloud private network
+set protocols static route 10.0.0.0/16 interface vti0
+set protocols static route 10.2.0.0/16 interface vti0
+
+set vpn ipsec authentication psk AWS-T1 id 34.215.107.246
+set vpn ipsec authentication psk AWS-T1 id 192.168.100.200
+set vpn ipsec authentication psk AWS-T1 secret 'sup3rsecr3t_psk'
+
+set vpn ipsec site-to-site peer AWS-T1 authentication mode 'pre-shared-secret'
+set vpn ipsec site-to-site peer AWS-T1 connection-type 'initiate'
+set vpn ipsec site-to-site peer AWS-T1 description 'ipsec'
+set vpn ipsec site-to-site peer AWS-T1 ike-group IKE-GROUP
+set vpn ipsec site-to-site peer AWS-T1 local-address '192.168.100.200'
+set vpn ipsec site-to-site peer AWS-T1 remote-address '34.215.107.246'
+set vpn ipsec site-to-site peer AWS-T1 vti bind 'vti0'
+set vpn ipsec site-to-site peer AWS-T1 vti esp-group ESP-GROUP
+set vpn ipsec site-to-site peer AWS-T1 force-udp-encapsulation
+
+# TUNNEL 2 ===========
+
+set interfaces vti vti1 address '169.254.200.1/30'
+set interfaces vti vti1 description 'VPG tunnel 2'
+set interfaces vti vti1 ip adjust-mss 1350
+set interfaces vti vti1 mtu '1436'
+
+# cloud private network
+set protocols static route 10.0.0.0/16 interface vti1 distance 20
+set protocols static route 10.2.0.0/16 interface vti1 distance 20
+
+set vpn ipsec authentication psk AWS-T2 id 52.36.28.134
+set vpn ipsec authentication psk AWS-T2 id 192.168.100.200
+set vpn ipsec authentication psk AWS-T2 secret 'sup3rsecr3t_psk'
+
+set vpn ipsec site-to-site peer AWS-T2 authentication mode 'pre-shared-secret'
+set vpn ipsec site-to-site peer AWS-T2 connection-type 'initiate'
+set vpn ipsec site-to-site peer AWS-T2 description 'ipsec'
+set vpn ipsec site-to-site peer AWS-T2 ike-group IKE-GROUP
+set vpn ipsec site-to-site peer AWS-T2 local-address '192.168.100.200'
+set vpn ipsec site-to-site peer AWS-T2 remote-address '52.36.28.134'
+set vpn ipsec site-to-site peer AWS-T2 vti bind 'vti1'
+set vpn ipsec site-to-site peer AWS-T2 vti esp-group ESP-GROUP
+set vpn ipsec site-to-site peer AWS-T2 force-udp-encapsulation
