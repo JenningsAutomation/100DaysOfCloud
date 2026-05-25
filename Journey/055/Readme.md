@@ -1,52 +1,21 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+![Import Flow](images/TerraformImport.png)
 
-# New post title here
+# Importing Existing Infrastructure into Terraform
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
-
-## Prerequisite
-
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ Terraform is a great way to deploy and manage infrastructure. But what about the existing infrastructure that has been deployed and managed manually? One of the main principles of infrastructure development is to "define everything in code'. To fully reap the benefits of operating your infrastructure through Terraform, pre-existing infrastructure should be managed and used in the same manner to prevent one-off environments and reduce risk. This often takes time and effort and is usually a considerable-sized project to migrate old infrastructure into Terraform retroactively.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- ✍️ This useful for reversing infrastructure as code. 
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
-
-## Try yourself
-
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 3 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-## ☁️ Cloud Outcome
-
-✍️ (Result) Describe your personal outcome, and lessons learned.
-
-## Next Steps
-
-✍️ Describe what you think you think you want to do next.
+- ✍️ Labs by QA
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[Mastodon](https://mastodon.social/@code_sentinel/116621281383375454)
+[LinkedIn](https://www.linkedin.com/posts/demian-jennings_day-55-of-100-days-of-code-importing-existing-share-7463762633855373312-JYsX?utm_source=share&utm_medium=member_desktop&rcm=ACoAADXbhxEBzxsfNpRcEjDWcxJMI75kD_O-eRA)
