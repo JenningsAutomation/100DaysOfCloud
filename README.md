@@ -99,7 +99,7 @@ I would like to feel confident with AWS, Azure and GCP
 - [ ] ☁️ 55 > [My FiftyFifth Day](Journey/055/Readme.md)
 - [ ] ☁️ 56 > [My FiftySixth Day](Journey/056/Readme.md)
 - [ ] ☁️ 57 > [My FiftySeventh Day](Journey/057/Readme.md)
-- [ ] ☁️ 58 > [](Journey/058/Readme.md)
+- [ ] ☁️ 58 > [My FiftyEighthDay](Journey/058/Readme.md)
 - [ ] ☁️ 59 > [](Journey/059/Readme.md)
 - [ ] ☁️ 60 > [](Journey/060/Readme.md)
 
