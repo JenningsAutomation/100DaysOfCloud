@@ -1,52 +1,34 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+![Python Retrieval](images/CloudShield-AI%20Ingestion_Retrieval_Pipeline.png)
 
-# New post title here
+# Python Retrieval Layer
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ Following yesterday’s work on the Go-based ingestion pipeline, today I focused on building the retrieval side of the "CloudShield-AI" project using Python and LangChain. 
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ Create a python virtual environment and pip install the dependencies is my requirements.txt.
 
 ## Use Case
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+- While Go handles the high-throughput parsing and database streaming, Python serves as the application's reasoning layer, managing how security queries locate relevant context.
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+Here is a quick look at the technical mechanics established today:
+- LangChain Embeddings: Implemented LangChain’s Bedrock module to process natural language queries through Amazon Titan Text Embeddings V2 (us-east-1). This converts human text into 1024-dimensional query vectors.
 
-## Try yourself
+- Vector Distance Search: Utilized the native psycopg2 driver to run Cosine Distance searches (<=>) against our PostgreSQL Docker container. This allows the system to cross-reference incoming questions with the document chunks stored by the Go service, taking full advantage of the accelerated HNSW database index.
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 3 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-## ☁️ Cloud Outcome
-
-✍️ (Result) Describe your personal outcome, and lessons learned.
+The local architecture forms a complete RAG (Retrieval-Augmented Generation) loop: Go writes the embeddings into storage, and Python handles the targeted vector retrieval.
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ Moving into Sprint 3 to build out the C# (.NET 9) dashboard control plane to add a human-in-the-loop review interface.
 
 ## Social Proof
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+[linkedin](https://www.linkedin.com/posts/demian-jennings_cloudcomputing-aiengineering-python-share-7480473657866186752-zedF/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADXbhxEBzxsfNpRcEjDWcxJMI75kD_O-eRA)
