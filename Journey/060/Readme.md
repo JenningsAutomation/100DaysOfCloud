@@ -1,49 +1,118 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+![Architecture](images/Microservice.png)
 
-# New post title here
+# Dashboard API Gateway
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ The Go Engine injects the data and Python controls the AI retrieval loops, the .NET9 API functions as the operational cockpit of CloudShield-AI. It exposes the REST endpoints  that the admin frontend can use to audit recent agent findings, fetch security event metrics, and execute human-in-the-loop approvals
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+✍️ We are using .NET 9 for this, so you need to have dotnet installed.
 
-## Use Case
-
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
 
 ## Cloud Research
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- ✍️ Dotnet documentation
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
 
-### Step 1 — Summary of Step
+### Step 1 — Scaffold an Empty web project
+```
+dotnet new web -o cloudshield-gateway
 
-![Screenshot](https://via.placeholder.com/500x300)
+# Enter the project directory
+cd cloudshield-gateway
+```
 
-### Step 1 — Summary of Step
+### Step 2 — Pull in the package fo rthe PostgresSQL dependency
+```
+dotnet add package Npgsql
+```
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 3 — Add the ConnectionString to the appsettings.json
+```
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "PostgresDB":"Host=172.17.0.2;Port=5432;Database=cloudshield;Username=******;Password=***************"
+  }
+}
+```
 
-### Step 3 — Summary of Step
+### Step 4 — Edit the Program.cs
+```
+using Npgsql;
 
-![Screenshot](https://via.placeholder.com/500x300)
+var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("PostgresDB");
+var app = builder.Build();
+
+app.MapGet("/", () => "CloudShield-AI Master Control Plane API");
+
+app.MapGet("/api/dashboard/actions/pending", async () =>
+{
+    var pendingActions =new List<object>();
+    await using var conn=new NpgsqlConnection(connectionString);
+    await conn.OpenAsync();
+
+    var sql="SELECT id, document_id, action_type, description, status FROM agent_actions WHERE status='PENDING';";
+    await using var cmd=new NpgsqlCommand(sql, conn);
+    await using var reader=await cmd.ExecuteReaderAsync();
+
+    while(await reader.ReadAsync())
+    {
+        pendingActions.Add(new
+        {
+            Id=reader.GetGuid(0),
+            DocumentId = reader.GetGuid(1),
+            ActionType = reader.GetString(2),
+            Description = reader.GetString(3),
+            Status=reader.GetString(4)
+        });
+    }
+    return Results.Ok(pendingActions);
+});
+
+app.MapPost("/api/dashboard/actions/{id}/approve",async (Guid id)=>
+{
+    await using var conn = new NpgsqlConnection(connectionString);
+    await conn.OpenAsync();
+
+    var sql = "UPDATE agent_actions SET status = 'APPROVED' WHERE id = @id;";
+    await using var cmd = new NpgsqlCommand(sql, conn);
+    cmd.Parameters.AddWithValue("id",id);
+
+    int rowsAffected = await cmd.ExecuteNonQueryAsync();
+
+    if (rowsAffected == 0)
+    {
+        return Results.NotFound(new { Message = $"Action ID {id} not found."});
+    }
+    Console.WriteLine($"Admin Callback: Security Patch Action {id} state changed to APPROVED.");
+    return Results.Ok(new {Message = $"Action {id} authorized. Deploying compliance patch to target cloud group."});
+});
+
+app.Run();
+
+```
+
 
 ## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
+✍️ This is the first time building an api with C#. I found C# very easy to read and understand. It looked alot like javascript. 
 
 ## Next Steps
 
-✍️ Describe what you think you think you want to do next.
+✍️ Since we hava a polyglot application this would be a perfect use case for implementing grpc.
 
 ## Social Proof
 
