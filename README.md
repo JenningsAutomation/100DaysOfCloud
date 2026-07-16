@@ -105,7 +105,7 @@ I would like to feel confident with AWS, Azure and GCP
 
 ## Stumbling through the caves
 
-- [ ] ☁️ 61 > [](Journey/061/Readme.md)
+- [ ] ☁️ 61 > [My Sixtyfirst Day](Journey/061/Readme.md)
 - [ ] ☁️ 62 > [](Journey/062/Readme.md)
 - [ ] ☁️ 63 > [](Journey/063/Readme.md)
 - [ ] ☁️ 64 > [](Journey/064/Readme.md)
