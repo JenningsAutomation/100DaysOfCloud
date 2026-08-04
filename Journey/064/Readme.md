@@ -436,4 +436,4 @@ curl -X POST https://<YOUR_DEPLOYED_FUNCTION_APP_NAME>.azurewebsites.net/api/use
 
 ✍️ Show that you shared your process on Twitter or LinkedIn
 
-[LinkedIn](link)
+[LinkedIn](https://lnkd.in/p/exk2tD3M)
