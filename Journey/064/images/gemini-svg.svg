@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" style="background-color: #0b1120; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="azure-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0078d4" />
+      <stop offset="100%" stop-color="#003d73" />
+    </linearGradient>
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="acl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#311b92" />
+    </linearGradient>
+    
+    <!-- Drop Shadow -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+    
+    <!-- Flow Animation Lines -->
+    <style>
+      .flow-line { stroke-dasharray: 8, 8; animation: dash 20s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset: -100; } }
+      .title { font-weight: 700; fill: #f8fafc; }
+      .label { font-size: 12px; fill: #94a3b8; }
+      .badge { font-size: 10px; font-weight: 600; text-anchor: middle; fill: #ffffff; }
+    </style>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="40" y="45" class="title" font-size="22" fill="#38bdf8">Azure Anti-Corruption Layer (ACL) Architecture</text>
+  <text x="40" y="68" class="label" font-size="13">Serverless .NET 8 Isolated Worker &amp; Keyless Entra ID Security Boundary</text>
+
+  <!-- OUTER BOUNDARY: Azure Resource Group -->
+  <rect x="230" y="100" width="730" height="540" rx="12" fill="#0f172a" stroke="#334155" stroke-width="2" stroke-dasharray="6,6" filter="url(#shadow)" />
+  <rect x="250" y="85" width="220" height="26" rx="4" fill="#1e293b" stroke="#475569" />
+  <text x="360" y="102" class="title" font-size="11" text-anchor="middle" fill="#93c5fd">RESOURCE GROUP: rg-acl-pattern-dev</text>
+
+  <!-- 1. EXTERNAL CLIENT -->
+  <g transform="translate(40, 270)" filter="url(#shadow)">
+    <rect x="0" y="0" width="150" height="130" rx="8" fill="url(#card-bg)" stroke="#38bdf8" stroke-width="2" />
+    <circle cx="75" cy="40" r="20" fill="#0284c7" opacity="0.2" />
+    <path d="M 65 35 L 85 35 M 65 40 L 85 40 M 65 45 L 85 45" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <text x="75" y="80" class="title" font-size="13" text-anchor="middle">HTTP Client</text>
+    <text x="75" y="98" class="label" font-size="11" text-anchor="middle">curl / API Consumer</text>
+    <rect x="25" y="108" width="100" height="16" rx="8" fill="#0369a1" />
+    <text x="75" y="120" class="badge">POST /api/user</text>
+  </g>
+
+  <!-- FLOW 1: Client -> Azure Function -->
+  <path d="M 190 335 L 280 335" stroke="#38bdf8" stroke-width="3" fill="none" class="flow-line" />
+  <polygon points="277,330 287,335 277,340" fill="#38bdf8" />
+  <text x="235" y="325" class="label" font-size="10" text-anchor="middle" fill="#38bdf8">HTTPS / TLS 1.2+</text>
+
+  <!-- 2. SERVERLESS COMPUTE LAYER (Function App) -->
+  <g transform="translate(290, 140)" filter="url(#shadow)">
+    <!-- Container Card -->
+    <rect x="0" y="0" width="370" height="470" rx="10" fill="url(#card-bg)" stroke="#10b981" stroke-width="2" />
+    <text x="20" y="32" class="title" font-size="15" fill="#34d399">Azure Function App</text>
+    <text x="20" y="50" class="label" font-size="11">func-acl-dev-* (Flex Consumption FC1)</text>
+
+    <!-- App Hardening Badges -->
+    <rect x="20" y="62" width="90" height="18" rx="4" fill="#065f46" />
+    <text x="65" y="75" class="badge">HTTPS Only</text>
+    <rect x="118" y="62" width="100" height="18" rx="4" fill="#065f46" />
+    <text x="168" y="75" class="badge">.NET 8 Isolated</text>
+
+    <!-- IN-MEMORY ACL PROCESSING BOX -->
+    <rect x="20" y="100" width="330" height="230" rx="8" fill="url(#acl-bg)" stroke="#6366f1" stroke-width="1.5" />
+    <text x="35" y="125" class="title" font-size="13" fill="#a5b4fc">Anti-Corruption Layer (ACL)</text>
+    <text x="35" y="140" class="label" font-size="10" fill="#818cf8">Isolated Domain Translation Pipeline</text>
+
+    <!-- Step 1: Input Payload -->
+    <rect x="35" y="155" width="290" height="40" rx="4" fill="#1e1b4b" stroke="#4338ca" />
+    <text x="45" y="172" class="title" font-size="11" fill="#e0e7ff">1. ModernUserRequest</text>
+    <text x="45" y="186" class="label" font-size="9" fill="#a5b4fc">Ingest raw JSON payload from modern endpoint</text>
+
+    <!-- Arrow down -->
+    <path d="M 180 195 L 180 205" stroke="#818cf8" stroke-width="2" fill="none" />
+    <polygon points="177,205 180,210 183,205" fill="#818cf8" />
+
+    <!-- Step 2: Translator -->
+    <rect x="35" y="210" width="290" height="40" rx="4" fill="#312e81" stroke="#6366f1" />
+    <text x="45" y="227" class="title" font-size="11" fill="#ffffff">2. UserAclTranslator</text>
+    <text x="45" y="241" class="label" font-size="9" fill="#c7d2fe">Sanitize address, map state codes, format IDs</text>
+
+    <!-- Arrow down -->
+    <path d="M 180 250 L 180 260" stroke="#818cf8" stroke-width="2" fill="none" />
+    <polygon points="177,260 180,265 183,260" fill="#818cf8" />
+
+    <!-- Step 3: Output Payload -->
+    <rect x="35" y="265" width="290" height="50" rx="4" fill="#1e1b4b" stroke="#4338ca" />
+    <text x="45" y="282" class="title" font-size="11" fill="#e0e7ff">3. LegacyDomainUser</text>
+    <text x="45" y="296" class="label" font-size="9" fill="#a5b4fc">Return standardized domain model response</text>
+    <text x="45" y="307" class="label" font-size="9" fill="#34d399">✓ HTTP 200 OK</text>
+
+    <!-- Managed Identity Box -->
+    <rect x="20" y="350" width="330" height="95" rx="8" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5" />
+    <text x="35" y="375" class="title" font-size="13" fill="#c084fc">System-Assigned Managed Identity</text>
+    <text x="35" y="393" class="label" font-size="11">Entra ID Principal Bound to Function Lifecycle</text>
+    <rect x="35" y="405" width="200" height="22" rx="4" fill="#581c87" />
+    <text x="135" y="420" class="badge">Keyless Cloud Authentication</text>
+  </g>
+
+  <!-- FLOW 2: Managed Identity -> Storage Account -->
+  <path d="M 660 487 L 700 487 L 700 335 L 720 335" stroke="#c084fc" stroke-width="2.5" fill="none" class="flow-line" />
+  <polygon points="717,330 727,335 717,340" fill="#c084fc" />
+
+  <!-- 3. STORAGE & SECURITY TIER -->
+  <g transform="translate(730, 200)" filter="url(#shadow)">
+    <rect x="0" y="0" width="200" height="270" rx="10" fill="url(#card-bg)" stroke="#f59e0b" stroke-width="2" />
+    <text x="20" y="32" class="title" font-size="15" fill="#fbbf24">Azure Storage</text>
+    <text x="20" y="50" class="label" font-size="11">stacl-dev-*</text>
+
+    <!-- Storage Security Rules -->
+    <rect x="20" y="65" width="160" height="20" rx="4" fill="#78350f" />
+    <text x="100" y="79" class="badge">Public Access: Disabled</text>
+
+    <rect x="20" y="92" width="160" height="20" rx="4" fill="#78350f" />
+    <text x="100" y="106" class="badge">Minimum TLS: 1.2</text>
+
+    <!-- RBAC Role Box -->
+    <rect x="15" y="130" width="170" height="120" rx="6" fill="#451a03" stroke="#d97706" stroke-width="1" />
+    <text x="25" y="150" class="title" font-size="11" fill="#fef3c7">RBAC Role Assignment</text>
+    <text x="25" y="168" class="label" font-size="10" fill="#fde68a">Storage Blob Data Owner</text>
+    <text x="25" y="182" class="label" font-size="8" fill="#d97706">(b7e6dc6d-f1e8-...)</text>
+    
+    <rect x="25" y="195" width="150" height="40" rx="4" fill="#78350f" />
+    <text x="32" y="212" class="title" font-size="10" fill="#ffffff">Container Package:</text>
+    <text x="32" y="225" class="label" font-size="9" fill="#fde68a">app-package-func-*</text>
+  </g>
+
+  <!-- Legend / Footer -->
+  <g transform="translate(40, 610)">
+    <rect x="0" y="0" width="920" height="40" rx="6" fill="#1e293b" stroke="#334155" />
+    <circle cx="20" cy="20" r="5" fill="#38bdf8" />
+    <text x="32" y="24" class="label" font-size="11">HTTPS Ingress</text>
+
+    <circle cx="150" cy="20" r="5" fill="#34d399" />
+    <text x="162" y="24" class="label" font-size="11">Isolated Processing</text>
+
+    <circle cx="300" cy="20" r="5" fill="#c084fc" />
+    <text x="312" y="24" class="label" font-size="11">Entra ID Managed Identity (Keyless)</text>
+
+    <circle cx="530" cy="20" r="5" fill="#f59e0b" />
+    <text x="542" y="24" class="label" font-size="11">Hardened Azure Blob Storage</text>
+  </g>
+
+</svg>
